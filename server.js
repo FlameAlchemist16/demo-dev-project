@@ -1,9 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const path = require('path');
 
 const app = express();
 
 let userGoal = 'Learn DevOps basics'
+
+app.set('view engine', 'ejs')
 
 app.use(
     bodyParser.urlencoded({
@@ -14,7 +17,7 @@ app.use(
 app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
-    res.send('index.html');
+    res.render('index', {userGoal});
 });
 
 app.post('/store-goal', (req,res) =>{

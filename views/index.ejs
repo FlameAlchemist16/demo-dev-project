@@ -5,9 +5,9 @@
     <body>
         <section>
             <h2>My Goal</h2>
-            <h3>${userGoal}</h3>
+            <h3 id="userGoal"> <%=userGoal%> </h3>
         </section>
-        <form action="/store-goal" method="POST">
+        <form action="/store-goal" method="POST" id="storeGoalForm">
             <div class="form-control">
                 <label>Goal</label>
                 <input type="text" name="goal">
